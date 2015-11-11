@@ -9,14 +9,29 @@
 import Foundation
 
 class TMXTile : NSObject {
-    var id : Int
+    var id : Int = 0
+    var properties : [String : String] = [:]
     
-    var terrain : [TMXTerrain]?
-    var probability : Float?
-    var animation : [TMXAnimationFrame]?
+    //var terrain : [TMXTerrain]?
+    //var probability : Float?
+    //var animation : [TMXAnimationFrame]?
     
-    init(id : Int) {
-        self.id = id
+//    init(id : Int) {
+//        self.id = id
+//    }
+    
+    func createTile(attributes : [String : String]) {
+        if let id = attributes["id"] {
+            self.id = (id as NSString).integerValue
+        }
+    }
+    
+    func addProperty(attributes : [String : String]) {
+        if let key = attributes["name"] {
+            if let value = attributes["value"] {
+                properties[key] = value
+            }
+        }
     }
 }
 

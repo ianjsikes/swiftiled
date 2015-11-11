@@ -17,6 +17,7 @@ class TMXReader : NSObject, NSXMLParserDelegate {
     var currLayer : TMXLayer?
     var currData : TMXData?
     var currTileset : TMXTileset?
+    var currTile : TMXTile?
     
     var delegate : TMXReaderDelegate?
     
@@ -59,6 +60,17 @@ class TMXReader : NSObject, NSXMLParserDelegate {
             self.currTileset = tileset
             tileset.createTileset(attributeDict)
             //print("Tileset found")
+        case "tile":
+            if let set = self.currTileset {
+                let tile = TMXTile()
+                self.currTile = tile
+                tile.createTile(attributeDict)
+                set.tiles.append(tile)
+            }
+        case "property":
+            if let tile = self.currTile {
+                tile.addProperty(attributeDict)
+            }
         case "image":
             if let source = attributeDict["source"] {
                 var split = source.componentsSeparatedByString("/")
@@ -105,6 +117,12 @@ class TMXReader : NSObject, NSXMLParserDelegate {
     {
         tagStack.pop()
         switch elementName {
+        case "tile":
+            self.currTile = nil
+        case "layer":
+            self.currLayer = nil
+        case "tileset":
+            self.currTileset = nil
         case "data":
             currData!.dataString = currData!.dataString.stringByReplacingOccurrencesOfString("\n", withString: "")
             currData!.processDataString()

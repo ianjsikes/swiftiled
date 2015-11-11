@@ -22,7 +22,8 @@ class TMXTileset: NSObject {
     var tileOffset : (Int, Int) = (0, 0)
     var imageName : String = ""
     var spriteSheet : SpriteSheet?
-    var terrainTypes : [TMXTerrain]?
+    //var terrainTypes : [TMXTerrain]?
+    var tiles : [TMXTile] = []
     
     override var description : String {
         return "\n\t\tTILESET: \(name),\n\t\tFirst GID: \(firstGID),\n\t\tTile Width: \(tileWidth),\n\t\tTile Height: \(tileHeight),\n\t\tSpacing: \(spacing),\n\t\tMargin: \(margin),\n\t\tTile Count: \(tileCount),\n\t\tTile Offset: \(tileOffset),\n\t\tImage Name: \(imageName)"
