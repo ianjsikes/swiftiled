@@ -26,7 +26,7 @@ class GameScene: SKScene, TMXReaderDelegate {
         let mNode = renderer.mapNode
         self.addChild(mNode)
         mNode.position = CGPointMake(self.frame.width / 5, self.frame.height / 3)
-        mNode.setScale(1.3)
+        mNode.setScale(1.0)
         //print(mNode.children[0].children)
     }
     

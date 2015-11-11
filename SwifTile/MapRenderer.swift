@@ -50,9 +50,11 @@ class MapRenderer : NSObject {
                     let localID = data.gids[index]
                     if localID > 0 {
                         if let sprite = self.map.getSpriteByGID(localID) {
+                            sprite.filteringMode = SKTextureFilteringMode.Nearest
                             let tileNode = SKSpriteNode(texture: sprite)
                             layerNode.addChild(tileNode)
                             let pos = CGPointMake(CGFloat(a) * tileNode.size.width, CGFloat(y) * tileNode.size.height)
+                            print("Position: \(pos)")
                             tileNode.position = pos
                         }
                     }
