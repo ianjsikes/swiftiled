@@ -18,9 +18,11 @@ class TMXReader : NSObject, NSXMLParserDelegate {
     var currData : TMXData?
     var currTileset : TMXTileset?
     
+    var delegate : TMXReaderDelegate?
     
     
-    init?(fileName : String, completedAction : TMXMap -> ()){
+    init?(fileName : String, delegate : TMXReaderDelegate?){
+        self.delegate = delegate
         super.init()
         if let path = NSBundle.mainBundle().pathForResource(fileName, ofType: "tmx"){
             if let tempParser = NSXMLParser(contentsOfURL: NSURL(fileURLWithPath: path)) {
@@ -50,13 +52,13 @@ class TMXReader : NSObject, NSXMLParserDelegate {
         switch elementName {
         case "map":
             self.map.createMap(attributeDict)
-            print("Map found")
+            //print("Map found")
         case "tileset":
             let tileset = TMXTileset()
             self.map.tilesets.append(tileset)
             self.currTileset = tileset
             tileset.createTileset(attributeDict)
-            print("Tileset found")
+            //print("Tileset found")
         case "image":
             if let source = attributeDict["source"] {
                 var split = source.componentsSeparatedByString("/")
@@ -67,13 +69,13 @@ class TMXReader : NSObject, NSXMLParserDelegate {
                 self.currTileset!.imageName = filename
                 self.currTileset!.setSpriteSheet()
             }
-            print("Image found")
+            //print("Image found")
         case "layer":
             let layer = TMXLayer()
             self.currLayer = layer
             layer.createLayer(attributeDict)
             self.map.layers.append(layer)
-            print("Layer found")
+            //print("Layer found")
         case "data":
             let data = TMXData()
             self.currData = data
@@ -81,7 +83,7 @@ class TMXReader : NSObject, NSXMLParserDelegate {
                 layer.data = data
             }
             data.createData(attributeDict)
-            print("Data found")
+            //print("Data found")
         default:
             break
         }
@@ -115,6 +117,7 @@ class TMXReader : NSObject, NSXMLParserDelegate {
     
     func parserDidEndDocument(parser: NSXMLParser) {
         print("Finished reading TMX File")
+        self.delegate?.onReaderCompleted(self.map)
         //print(self.map)
     }
     

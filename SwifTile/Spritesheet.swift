@@ -40,8 +40,8 @@ class SpriteSheet {
     init(imageName: String, spriteWidth: Int, spriteHeight: Int, margin: Int = 0, spacing: Int = 0){
         self.sheetTexture = SKTexture(imageNamed: imageName)
         setSpriteWidthAndHeight(spriteWidth, spriteHeight)
-        setRowsAndCols()
         setMarginAndSpacing(margin, spacing)
+        setRowsAndCols()
     }
     
     func setSpriteWidthAndHeight(){
@@ -50,18 +50,27 @@ class SpriteSheet {
     }
     
     func setSpriteWidthAndHeight(w : Int, _ h : Int){
-        self.spriteWidth = CGFloat(w) / self.sheetTexture.size().width
-        self.spriteHeight = CGFloat(h) / self.sheetTexture.size().height
+//        print(w, h)
+//        self.spriteWidth = CGFloat(w) / self.sheetTexture.size().width
+//        self.spriteHeight = CGFloat(h) / self.sheetTexture.size().height
+        self.spriteWidth = CGFloat(w)
+        self.spriteHeight = CGFloat(h)
     }
     
     func setMarginAndSpacing(m : Int, _ s : Int){
-        self.margin = CGFloat(m) / self.sheetTexture.size().width
-        self.spacing = CGFloat(s) / self.sheetTexture.size().width
+//        self.margin = CGFloat(m) / self.sheetTexture.size().width
+//        self.spacing = CGFloat(s) / self.sheetTexture.size().width
+        self.margin = CGFloat(m)
+        self.spacing = CGFloat(s)
+        print("Margin: \(self.margin), Spacing: \(self.spacing)")
     }
     
     func setRowsAndCols(){
-        self.rows = Int(self.sheetTexture.size().width / self.spriteWidth)
-        self.cols = Int(self.sheetTexture.size().height / self.spriteHeight)
+        print("Width: \(self.sheetTexture.size().width), Sprite Width: \(self.spriteWidth)")
+        print("Height: \(self.sheetTexture.size().height), Sprite Height: \(self.spriteHeight)")
+        self.rows = Int((self.sheetTexture.size().width - (self.margin)) / (self.spriteWidth + self.spacing))
+        self.cols = Int((self.sheetTexture.size().height - (self.margin)) / (self.spriteHeight + self.spacing))
+        print("Rows: \(self.rows), Cols: \(self.cols)")
     }
     
     func getSprite(x: Int, _ y: Int) -> SKTexture?{
@@ -70,14 +79,22 @@ class SpriteSheet {
         }else{
             let startX = (CGFloat(x) * (spriteWidth + spacing)) + margin
             let startY = (CGFloat(y) * (spriteHeight + spacing)) + margin
-            return SKTexture(rect:CGRectMake(startX, startY, spriteWidth, spriteHeight), inTexture:sheetTexture)
+            
+            let percentX = startX / self.sheetTexture.size().width
+            let percentY = startY / self.sheetTexture.size().height
+            print("StartX: \(startX), StartY: \(startY)")
+            return SKTexture(rect:CGRectMake(percentX, percentY, (spriteWidth / self.sheetTexture.size().width), (spriteHeight / self.sheetTexture.size().height)), inTexture:sheetTexture)
         }
     }
     
     func getSprite(id : Int) -> SKTexture? {
+        //print("Rows: \(self.rows), Cols: \(self.cols)")
         let spriteCount = self.rows * self.cols
+//        print("Sprite Count: \(spriteCount)")
         let x = (id - 1) % self.cols
         let y = (spriteCount - id) / self.cols
+        
+//        print("Getting sprite - ID: \(id), Coordinates: (\(x), \(y))")
         
         return self.getSprite(x, y)
     }

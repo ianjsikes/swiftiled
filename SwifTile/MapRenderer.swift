@@ -17,31 +17,43 @@ class MapRenderer : NSObject {
     init(map : TMXMap) {
         self.map = map
         self.mapNode = SKNode()
+        self.mapNode.name = "map"
+        self.mapNode.position = CGPointMake(0, 0)
     }
     
     func drawMap() {
         
         for i in 0..<self.map.layers.count {
             let layerNode = self.renderLayer(self.map.layers[i])
+            layerNode.position = CGPointMake(0, 0)
             self.mapNode.addChild(layerNode)
         }
+        print("Map rendered")
     }
     
     func renderLayer(layer : TMXLayer) -> SKNode {
+        print("Rendering layer: \(layer.layerName)")
         let layerNode = SKNode()
+        layerNode.name = layer.layerName
         
         if let data = layer.data {
             
-            for a in 0..<layer.x {
-                for b in 0..<layer.y {
+            print("test")
+            print("x: \(layer.width), y: \(layer.height)")
+            
+            for a in 0..<layer.width {
+                for b in 0..<layer.height {
                     
-                    let index = (b * layer.x) + a
+                    let y = layer.height - b - 1
+                    
+                    let index = (b * layer.width) + a
                     let localID = data.gids[index]
                     if localID > 0 {
                         if let sprite = self.map.getSpriteByGID(localID) {
                             let tileNode = SKSpriteNode(texture: sprite)
                             layerNode.addChild(tileNode)
-                            tileNode.position = CGPointMake(CGFloat(a) * tileNode.size.width, CGFloat(b) * tileNode.size.height)
+                            let pos = CGPointMake(CGFloat(a) * tileNode.size.width, CGFloat(y) * tileNode.size.height)
+                            tileNode.position = pos
                         }
                     }
                     
