@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="left-up" width="80" height="20" tilewidth="21" tileheight="21" nextobjectid="1">
+ <tileset firstgid="1" name="spritesheet" tilewidth="21" tileheight="21" spacing="2" margin="2" tilecount="900">
+  <image source="../Downloads/platformer-art-pixel-redux/spritesheet.png" trans="4c6d91" width="692" height="692"/>
+ </tileset>
+ <layer name="Tile Layer 1" width="80" height="20">
+  <data encoding="base64" compression="zlib">
+   eJztV1EOgjAM1e4I6r/oFbyQd/Isg4OoHxxDPYAjo6GWbbAQWZfsJU1gI93baxmPzaagoKCgoCAeezXEQa237k79rh2KNXnF4gE2nrD+2ncY1vdFCl4xqA2/i6lvk4CnNmu2YDkgD7zG8RS8YpCSp4axXlTDVHWNQS20zlJ5cWDtJfIs/bccUnkh5p4zIb/xT38hXT88rzuePo1QH5ffWOIvfP6FQrp+/P3le6L6oN+g30i6v7meGOuh+1wdro4ePmdw/tH+68A9RcP0qyHsL6Y8Ma8HgutXmftjBvpxnXSgv+iczzdqpi/3djwfgup3UnnpR/eF+3fpw/svpF8L41515btt7TXqV6khctCP68T7x6Wfr5/wGd8/mSvf1P+vdP3eYOPT83zBMEbHXXN83vdMTL6p/NLwBd2ts7A=
+  </data>
+ </layer>
+</map>

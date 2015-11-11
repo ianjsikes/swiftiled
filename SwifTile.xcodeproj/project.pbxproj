@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AD07FBBB1BF039D700776028 /* TMXMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD07FBBA1BF039D700776028 /* TMXMap.swift */; settings = {ASSET_TAGS = (); }; };
+		AD07FBBD1BF03A1600776028 /* TMXTileset.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD07FBBC1BF03A1600776028 /* TMXTileset.swift */; settings = {ASSET_TAGS = (); }; };
+		AD07FBBF1BF03A4400776028 /* TMXLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD07FBBE1BF03A4400776028 /* TMXLayer.swift */; settings = {ASSET_TAGS = (); }; };
+		AD07FBC11BF03F2400776028 /* TMXData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD07FBC01BF03F2400776028 /* TMXData.swift */; settings = {ASSET_TAGS = (); }; };
 		AD0941121BE09ECC00D9DAB9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0941111BE09ECC00D9DAB9 /* AppDelegate.swift */; };
 		AD0941141BE09ECC00D9DAB9 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = AD0941131BE09ECC00D9DAB9 /* GameScene.sks */; };
 		AD0941161BE09ECC00D9DAB9 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0941151BE09ECC00D9DAB9 /* GameScene.swift */; };
@@ -14,9 +18,22 @@
 		AD09411B1BE09ECC00D9DAB9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD0941191BE09ECC00D9DAB9 /* Main.storyboard */; };
 		AD09411D1BE09ECC00D9DAB9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD09411C1BE09ECC00D9DAB9 /* Assets.xcassets */; };
 		AD0941201BE09ECC00D9DAB9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD09411E1BE09ECC00D9DAB9 /* LaunchScreen.storyboard */; };
+		AD0941281BE09F6400D9DAB9 /* TMXReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0941271BE09F6400D9DAB9 /* TMXReader.swift */; settings = {ASSET_TAGS = (); }; };
+		AD7CE94A1BF17B4F008B953E /* TMXTerrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7CE9491BF17B4F008B953E /* TMXTerrain.swift */; settings = {ASSET_TAGS = (); }; };
+		AD7CE94C1BF17C9E008B953E /* TMXTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7CE94B1BF17C9E008B953E /* TMXTile.swift */; settings = {ASSET_TAGS = (); }; };
+		AD7CE9501BF189D0008B953E /* map.tmx in Resources */ = {isa = PBXBuildFile; fileRef = AD7CE94F1BF189D0008B953E /* map.tmx */; settings = {ASSET_TAGS = (); }; };
+		AD7CE9521BF19B05008B953E /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7CE9511BF19B05008B953E /* Stack.swift */; settings = {ASSET_TAGS = (); }; };
+		AD7CE9541BF1ACF1008B953E /* untitled.tmx in Resources */ = {isa = PBXBuildFile; fileRef = AD7CE9531BF1ACF1008B953E /* untitled.tmx */; settings = {ASSET_TAGS = (); }; };
+		AD7CE9561BF1C56A008B953E /* TSXReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7CE9551BF1C56A008B953E /* TSXReader.swift */; settings = {ASSET_TAGS = (); }; };
+		AD7CE9581BF1D739008B953E /* Spritesheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7CE9571BF1D739008B953E /* Spritesheet.swift */; settings = {ASSET_TAGS = (); }; };
+		AD7CE95A1BF1DB3F008B953E /* MapRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7CE9591BF1DB3F008B953E /* MapRenderer.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AD07FBBA1BF039D700776028 /* TMXMap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TMXMap.swift; sourceTree = "<group>"; };
+		AD07FBBC1BF03A1600776028 /* TMXTileset.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TMXTileset.swift; sourceTree = "<group>"; };
+		AD07FBBE1BF03A4400776028 /* TMXLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TMXLayer.swift; sourceTree = "<group>"; };
+		AD07FBC01BF03F2400776028 /* TMXData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TMXData.swift; sourceTree = "<group>"; };
 		AD09410E1BE09ECC00D9DAB9 /* SwifTile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwifTile.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD0941111BE09ECC00D9DAB9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AD0941131BE09ECC00D9DAB9 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -26,6 +43,15 @@
 		AD09411C1BE09ECC00D9DAB9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AD09411F1BE09ECC00D9DAB9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AD0941211BE09ECC00D9DAB9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AD0941271BE09F6400D9DAB9 /* TMXReader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TMXReader.swift; sourceTree = "<group>"; };
+		AD7CE9491BF17B4F008B953E /* TMXTerrain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TMXTerrain.swift; sourceTree = "<group>"; };
+		AD7CE94B1BF17C9E008B953E /* TMXTile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TMXTile.swift; sourceTree = "<group>"; };
+		AD7CE94F1BF189D0008B953E /* map.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = map.tmx; sourceTree = "<group>"; };
+		AD7CE9511BF19B05008B953E /* Stack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
+		AD7CE9531BF1ACF1008B953E /* untitled.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = untitled.tmx; sourceTree = "<group>"; };
+		AD7CE9551BF1C56A008B953E /* TSXReader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSXReader.swift; sourceTree = "<group>"; };
+		AD7CE9571BF1D739008B953E /* Spritesheet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Spritesheet.swift; sourceTree = "<group>"; };
+		AD7CE9591BF1DB3F008B953E /* MapRenderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapRenderer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +84,8 @@
 		AD0941101BE09ECC00D9DAB9 /* SwifTile */ = {
 			isa = PBXGroup;
 			children = (
+				AD7CE9531BF1ACF1008B953E /* untitled.tmx */,
+				AD7CE94F1BF189D0008B953E /* map.tmx */,
 				AD0941111BE09ECC00D9DAB9 /* AppDelegate.swift */,
 				AD0941131BE09ECC00D9DAB9 /* GameScene.sks */,
 				AD0941151BE09ECC00D9DAB9 /* GameScene.swift */,
@@ -66,6 +94,17 @@
 				AD09411C1BE09ECC00D9DAB9 /* Assets.xcassets */,
 				AD09411E1BE09ECC00D9DAB9 /* LaunchScreen.storyboard */,
 				AD0941211BE09ECC00D9DAB9 /* Info.plist */,
+				AD0941271BE09F6400D9DAB9 /* TMXReader.swift */,
+				AD07FBBA1BF039D700776028 /* TMXMap.swift */,
+				AD07FBBC1BF03A1600776028 /* TMXTileset.swift */,
+				AD07FBBE1BF03A4400776028 /* TMXLayer.swift */,
+				AD07FBC01BF03F2400776028 /* TMXData.swift */,
+				AD7CE9491BF17B4F008B953E /* TMXTerrain.swift */,
+				AD7CE94B1BF17C9E008B953E /* TMXTile.swift */,
+				AD7CE9511BF19B05008B953E /* Stack.swift */,
+				AD7CE9551BF1C56A008B953E /* TSXReader.swift */,
+				AD7CE9571BF1D739008B953E /* Spritesheet.swift */,
+				AD7CE9591BF1DB3F008B953E /* MapRenderer.swift */,
 			);
 			path = SwifTile;
 			sourceTree = "<group>";
@@ -130,7 +169,9 @@
 			files = (
 				AD0941141BE09ECC00D9DAB9 /* GameScene.sks in Resources */,
 				AD0941201BE09ECC00D9DAB9 /* LaunchScreen.storyboard in Resources */,
+				AD7CE9541BF1ACF1008B953E /* untitled.tmx in Resources */,
 				AD09411D1BE09ECC00D9DAB9 /* Assets.xcassets in Resources */,
+				AD7CE9501BF189D0008B953E /* map.tmx in Resources */,
 				AD09411B1BE09ECC00D9DAB9 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -142,8 +183,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD7CE94A1BF17B4F008B953E /* TMXTerrain.swift in Sources */,
+				AD7CE94C1BF17C9E008B953E /* TMXTile.swift in Sources */,
 				AD0941161BE09ECC00D9DAB9 /* GameScene.swift in Sources */,
+				AD07FBBB1BF039D700776028 /* TMXMap.swift in Sources */,
+				AD7CE9581BF1D739008B953E /* Spritesheet.swift in Sources */,
+				AD07FBBF1BF03A4400776028 /* TMXLayer.swift in Sources */,
+				AD7CE9521BF19B05008B953E /* Stack.swift in Sources */,
+				AD7CE95A1BF1DB3F008B953E /* MapRenderer.swift in Sources */,
+				AD07FBC11BF03F2400776028 /* TMXData.swift in Sources */,
+				AD07FBBD1BF03A1600776028 /* TMXTileset.swift in Sources */,
+				AD7CE9561BF1C56A008B953E /* TSXReader.swift in Sources */,
 				AD0941181BE09ECC00D9DAB9 /* GameViewController.swift in Sources */,
+				AD0941281BE09F6400D9DAB9 /* TMXReader.swift in Sources */,
 				AD0941121BE09ECC00D9DAB9 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -294,6 +346,7 @@
 				AD0941261BE09ECC00D9DAB9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
