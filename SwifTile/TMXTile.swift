@@ -12,6 +12,10 @@ class TMXTile : NSObject {
     var id : Int = 0
     var properties : [String : String] = [:]
     
+    override var description : String {
+        return "\n\t\t\tTile: \(id)\n\t\t\t\tProperties: \(properties)"
+    }
+    
     //var terrain : [TMXTerrain]?
     //var probability : Float?
     //var animation : [TMXAnimationFrame]?

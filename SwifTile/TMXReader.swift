@@ -136,7 +136,7 @@ class TMXReader : NSObject, NSXMLParserDelegate {
     func parserDidEndDocument(parser: NSXMLParser) {
         print("Finished reading TMX File")
         self.delegate?.onReaderCompleted(self.map)
-        //print(self.map)
+        print(self.map)
     }
     
 }

@@ -19,7 +19,6 @@
 		AD09411D1BE09ECC00D9DAB9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD09411C1BE09ECC00D9DAB9 /* Assets.xcassets */; };
 		AD0941201BE09ECC00D9DAB9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD09411E1BE09ECC00D9DAB9 /* LaunchScreen.storyboard */; };
 		AD0941281BE09F6400D9DAB9 /* TMXReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0941271BE09F6400D9DAB9 /* TMXReader.swift */; settings = {ASSET_TAGS = (); }; };
-		AD6A97261BF333CB00C7FDAA /* map.tmx in Resources */ = {isa = PBXBuildFile; fileRef = AD6A97251BF333CB00C7FDAA /* map.tmx */; settings = {ASSET_TAGS = (); }; };
 		AD7CE94A1BF17B4F008B953E /* TMXTerrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7CE9491BF17B4F008B953E /* TMXTerrain.swift */; settings = {ASSET_TAGS = (); }; };
 		AD7CE94C1BF17C9E008B953E /* TMXTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7CE94B1BF17C9E008B953E /* TMXTile.swift */; settings = {ASSET_TAGS = (); }; };
 		AD7CE9521BF19B05008B953E /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7CE9511BF19B05008B953E /* Stack.swift */; settings = {ASSET_TAGS = (); }; };
@@ -28,6 +27,7 @@
 		AD7CE9581BF1D739008B953E /* Spritesheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7CE9571BF1D739008B953E /* Spritesheet.swift */; settings = {ASSET_TAGS = (); }; };
 		AD7CE95A1BF1DB3F008B953E /* MapRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7CE9591BF1DB3F008B953E /* MapRenderer.swift */; settings = {ASSET_TAGS = (); }; };
 		AD7CE95C1BF31AC8008B953E /* TMXReaderDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7CE95B1BF31AC8008B953E /* TMXReaderDelegate.swift */; settings = {ASSET_TAGS = (); }; };
+		ADF18BFE1BF4032D00415299 /* map.tmx in Resources */ = {isa = PBXBuildFile; fileRef = ADF18BFD1BF4032D00415299 /* map.tmx */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,7 +45,6 @@
 		AD09411F1BE09ECC00D9DAB9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AD0941211BE09ECC00D9DAB9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AD0941271BE09F6400D9DAB9 /* TMXReader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TMXReader.swift; sourceTree = "<group>"; };
-		AD6A97251BF333CB00C7FDAA /* map.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = map.tmx; sourceTree = "<group>"; };
 		AD7CE9491BF17B4F008B953E /* TMXTerrain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TMXTerrain.swift; sourceTree = "<group>"; };
 		AD7CE94B1BF17C9E008B953E /* TMXTile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TMXTile.swift; sourceTree = "<group>"; };
 		AD7CE9511BF19B05008B953E /* Stack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
@@ -54,6 +53,7 @@
 		AD7CE9571BF1D739008B953E /* Spritesheet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Spritesheet.swift; sourceTree = "<group>"; };
 		AD7CE9591BF1DB3F008B953E /* MapRenderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapRenderer.swift; sourceTree = "<group>"; };
 		AD7CE95B1BF31AC8008B953E /* TMXReaderDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TMXReaderDelegate.swift; sourceTree = "<group>"; };
+		ADF18BFD1BF4032D00415299 /* map.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = map.tmx; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,7 +86,7 @@
 		AD0941101BE09ECC00D9DAB9 /* SwifTile */ = {
 			isa = PBXGroup;
 			children = (
-				AD6A97251BF333CB00C7FDAA /* map.tmx */,
+				ADF18BFD1BF4032D00415299 /* map.tmx */,
 				AD7CE9531BF1ACF1008B953E /* untitled.tmx */,
 				AD0941111BE09ECC00D9DAB9 /* AppDelegate.swift */,
 				AD0941131BE09ECC00D9DAB9 /* GameScene.sks */,
@@ -170,7 +170,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AD6A97261BF333CB00C7FDAA /* map.tmx in Resources */,
+				ADF18BFE1BF4032D00415299 /* map.tmx in Resources */,
 				AD0941141BE09ECC00D9DAB9 /* GameScene.sks in Resources */,
 				AD0941201BE09ECC00D9DAB9 /* LaunchScreen.storyboard in Resources */,
 				AD7CE9541BF1ACF1008B953E /* untitled.tmx in Resources */,

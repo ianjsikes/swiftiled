@@ -26,7 +26,23 @@ class TMXTileset: NSObject {
     var tiles : [TMXTile] = []
     
     override var description : String {
-        return "\n\t\tTILESET: \(name),\n\t\tFirst GID: \(firstGID),\n\t\tTile Width: \(tileWidth),\n\t\tTile Height: \(tileHeight),\n\t\tSpacing: \(spacing),\n\t\tMargin: \(margin),\n\t\tTile Count: \(tileCount),\n\t\tTile Offset: \(tileOffset),\n\t\tImage Name: \(imageName)"
+        return "\n\t\tTILESET: \(name),\n\t\tFirst GID: \(firstGID),\n\t\tTile Width: \(tileWidth),\n\t\tTile Height: \(tileHeight),\n\t\tSpacing: \(spacing),\n\t\tMargin: \(margin),\n\t\tTile Count: \(tileCount),\n\t\tTile Offset: \(tileOffset),\n\t\tImage Name: \(imageName)\n\t\tTiles: \(tiles)"
+    }
+    
+    func getTileProperties(gid : Int) -> [String:String]? {
+        var properties : [String:String]? = nil
+        
+        for i in 0..<self.tiles.count {
+            let tile = self.tiles[i]
+            if tile.id == gid {
+                properties = self.tiles[i].properties
+            }
+//            if self.tiles[i].id == gid {
+//                properties = self.tiles[i].properties
+//                break
+//            }
+        }
+        return properties
     }
     
     func setSpriteSheet() {

@@ -52,6 +52,10 @@ class MapRenderer : NSObject {
                         if let sprite = self.map.getSpriteByGID(localID) {
                             sprite.filteringMode = SKTextureFilteringMode.Nearest
                             let tileNode = SKSpriteNode(texture: sprite)
+                            if let props = self.map.getTileProperties(localID - 1) {
+                                print("Setting tile properties for tile: \(localID)")
+                                self.setNodeProperties(tileNode, props)
+                            }
                             layerNode.addChild(tileNode)
                             let pos = CGPointMake(CGFloat(a) * tileNode.size.width, CGFloat(y) * tileNode.size.height)
                             //print("Position: \(pos)")
@@ -64,6 +68,24 @@ class MapRenderer : NSObject {
             
         }
         return layerNode
+    }
+    
+    func setNodeProperties(node : SKSpriteNode, _ attrs : [String:String]) {
+        //print("Setting node properties")
+        for (key, value) in attrs {
+            if key == "BodyType" {
+                print("Setting physics body")
+                let body = SKPhysicsBody(rectangleOfSize: node.size)
+                body.dynamic = false
+                body.allowsRotation = false
+                body.affectedByGravity = false
+                body.collisionBitMask = 2
+                //body.pinned = true
+                body.restitution = 0.0
+                
+                node.physicsBody = body
+            }
+        }
     }
     
 //    func getTilesetFromGID(gid : Int) -> TMXTileset {

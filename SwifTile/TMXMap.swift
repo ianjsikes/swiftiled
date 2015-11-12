@@ -30,6 +30,16 @@ class TMXMap: NSObject {
         return "MAP:\n\tVersion: \(version),\n\tOrientation: \(orientation),\n\tRender Order: \(renderOrder),\n\tWidth: \(width),\n\tHeight: \(height),\n\tTile Width: \(tileWidth),\n\tTile Height: \(tileHeight),\n\tTilesets: \(tilesets),\n\tLayers: \(layers)"
     }
     
+    func getTileProperties(gid : Int) -> [String:String]? {
+        for i in 0..<self.tilesets.count {
+            let set = self.tilesets[i]
+            if gid >= set.firstGID && gid < (set.tileCount + set.firstGID) {
+                return set.getTileProperties(gid)
+            }
+        }
+        return nil
+    }
+    
     func getSpriteByGID(gid : Int) -> SKTexture? {
         var id = gid
         var remainder = 0
